@@ -31,9 +31,7 @@ export class PatientInsertComponent implements OnInit {
     let patient:Patient = this.form.value;
     this.PatientService.addPatient(patient).subscribe((data:Patient) =>{
       console.log(data)
-    })
-
- 
+    }) 
   
   }
 
