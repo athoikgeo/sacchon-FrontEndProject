@@ -11,9 +11,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     PatientListComponent,
     PatientInsertComponent
   ],
+
   imports: [
     CommonModule,
     ReactiveFormsModule
   ]
 })
+
 export class PatientModule { }

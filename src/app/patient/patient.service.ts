@@ -18,7 +18,7 @@ export class PatientService {
     )   
   }
 
-  addPatient(patient: Patient): Observable<Patient> {
+  addPatient(patient: Patient): Observable<Patient> {   
     return this.http.post<Patient>(
       `${this.baseUrl}/patient`,
       patient

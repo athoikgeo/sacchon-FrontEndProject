@@ -25,6 +25,8 @@ export class PatientInsertComponent implements OnInit {
     role: ["",] 
   })
   }
+  
+
   onClickSubmit(){
     let patient:Patient = this.form.value;
     this.PatientService.addPatient(patient).subscribe((data:Patient) =>{

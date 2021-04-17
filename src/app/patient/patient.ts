@@ -1,7 +1,8 @@
 export interface Patient {
     username: string;
     password: string;
-    firstname: string;
+    firstname:string;
     lastname: string;
     role: string;
+
 }

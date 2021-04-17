@@ -8,6 +8,7 @@ const routes: Routes = [
     path: 'view',
     component: PatientListComponent
   },
+  
   {
     path: 'insert',
     component: PatientInsertComponent
@@ -16,6 +17,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
+
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
