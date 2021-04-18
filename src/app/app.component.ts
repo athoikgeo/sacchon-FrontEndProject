@@ -19,7 +19,7 @@ export class AppComponent implements OnInit,OnDestroy{
   constructor(private router:Router, private loginServise:LoginService){}
 
   ngOnInit(): void {
-    if(sessionStorage.getItme("credentials") == null){
+    if(sessionStorage.getItem("credentials") == null){
      this.isLogged = false;
      this.router.navigate(['login'])
   }
