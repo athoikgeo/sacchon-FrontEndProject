@@ -9,9 +9,9 @@ import { Patient } from '../patient';
 })
 export class PatientListComponent implements OnInit {
 
-  constructor(private PatientService:PatientService) { }
+  constructor(private PatientService:PatientService ) { }
   
-  patients: Patient[] = []; 
+  patients!: Patient[];
 
   ngOnInit(): void {
   }

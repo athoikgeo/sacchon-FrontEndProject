@@ -9,12 +9,10 @@ import { Patient } from '../patient';
   styleUrls: ['./patient-insert.component.scss']
 })
 export class PatientInsertComponent implements OnInit {
-  [x: string]: any;
 
   form!:FormGroup; 
- 
 
-  constructor(private fb: FormBuilder,PatientService:PatientService) { }
+  constructor(private fb: FormBuilder, private patientService:PatientService) { }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -23,16 +21,14 @@ export class PatientInsertComponent implements OnInit {
     firstname:["",],
     lastname:["",],
     role: ["",] 
-  })
+    })
   }
   
-
   onClickSubmit(){
     let patient:Patient = this.form.value;
-    this.PatientService.addPatient(patient).subscribe((data:Patient) =>{
+    this.patientService.addPatient(patient).subscribe((data:Patient) =>{
       console.log(data)
     }) 
-  
   }
 
 }

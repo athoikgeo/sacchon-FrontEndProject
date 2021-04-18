@@ -2,8 +2,16 @@ import { PatientInsertComponent } from './patient/patient-insert/patient-insert.
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PatientListComponent } from './patient/patient-list/patient-list.component';
+import { LoginFormComponent } from './login/login-form/login-form.component';
 
 const routes: Routes = [
+  {path:'',redirectTo:'login',pathMatch:'full'},
+  {
+    path: 'login',
+    component: LoginFormComponent
+
+  },
+
   {
     path: 'view',
     component: PatientListComponent
