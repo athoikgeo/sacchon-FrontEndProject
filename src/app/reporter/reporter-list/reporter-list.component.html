@@ -1,0 +1,19 @@
+<button class = "btn btn-primary" (click) = "getReporters()">GET REPORTERS</button>
+<div class = "row">
+  <!-- {{reporters|json}} -->
+    <div *ngFor="let reporter of reporters">
+        <div class="col-sm-4"></div>
+        <div class="card" style="width: 18rem;">
+         <div>
+          <div class="card-body">
+
+            <h5 class="card-title">{{reporter.firstName}} {{reporter.lastName}}</h5>
+              <p class="card-text">Role: {{reporter.role}}</p>
+              <p class="card-text">Username: {{reporter.username}}</p>
+              <p class="card-text">password: {{reporter.password}}</p>        
+            </div>
+            
+          </div>
+          
+    </div>
+</div>

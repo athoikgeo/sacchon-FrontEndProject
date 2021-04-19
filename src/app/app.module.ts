@@ -1,3 +1,4 @@
+import { ReporterModule } from './reporter/reporter.module';
 import { DoctorModule } from './doctor/doctor.module';
 import { LoginModule } from './login/login.module';
 import { PatientModule } from './patient/patient.module';
@@ -20,6 +21,7 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     PatientModule,
     DoctorModule,
+    ReporterModule,
     HttpClientModule,
     LoginModule
   ],

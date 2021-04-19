@@ -9,7 +9,7 @@ import { Patient } from '../patient';
 })
 export class PatientListComponent implements OnInit {
 
-  constructor(private PatientService:PatientService ) { }
+  constructor(private patientService:PatientService ) { }
   
   patients!: Patient[];
 
@@ -18,14 +18,10 @@ export class PatientListComponent implements OnInit {
 
   getPatients(){
     this.patients = [],
-    this.PatientService.getPatients().subscribe(data =>{
-      this.patients = data;
+    this.patientService.getPatients().subscribe(data =>{
+      this.patients =<Patient[]> data;
       console.log(this.patients);
       
     });
-
   }
-
-
-
 }

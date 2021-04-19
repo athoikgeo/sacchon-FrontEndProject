@@ -18,13 +18,14 @@ export class PatientInsertComponent implements OnInit {
     this.form = this.fb.group({
     username:["",],
     password:["",],
-    firstname:["",],
-    lastname:["",],
+    firstName:["",],
+    lastName:["",],
     role: ["",] 
     })
   }
   
   onClickSubmit(){
+    
     let patient:Patient = this.form.value;
     this.patientService.addPatient(patient).subscribe((data:Patient) =>{
       console.log(data)

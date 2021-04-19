@@ -1,7 +1,7 @@
 export interface Doctor {
     username: string;
     password: string;
-    firstname:string;
-    lastname: string;
+    firstName:string;
+    lastName: string;
     role: string;
 }

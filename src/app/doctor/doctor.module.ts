@@ -1,7 +1,8 @@
+import { DoctorInsertComponent } from './doctor-insert/doctor-insert.component';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DoctorListComponent } from './doctor-list/doctor-list.component';
-import { DoctorInsertComponent } from './doctor-insert/doctor-insert.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -9,11 +10,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     DoctorListComponent,
-    DoctorInsertComponent
+    DoctorInsertComponent 
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class DoctorModule { }

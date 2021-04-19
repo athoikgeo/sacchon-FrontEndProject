@@ -1,11 +1,13 @@
 <button class = "btn btn-primary" (click) = "getPatients()">GET PATIENTS</button>
 <div class = "row">
+  <!-- {{patients|json}} -->
     <div *ngFor="let patient of patients">
         <div class="col-sm-4"></div>
         <div class="card" style="width: 18rem;">
-           
+         <div>
           <div class="card-body">
-            <h5 class="card-title">{{patient.firstname}}{{patient.lastname}}</h5>
+
+            <h5 class="card-title">{{patient.firstName}} {{patient.lastName}}</h5>
               <p class="card-text">Role: {{patient.role}}</p>
               <p class="card-text">Username: {{patient.username}}</p>
               <p class="card-text">password: {{patient.password}}</p>        

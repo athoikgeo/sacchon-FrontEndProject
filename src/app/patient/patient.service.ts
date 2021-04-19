@@ -26,9 +26,9 @@ export class PatientService {
   // )}
 
   addPatient( patient: Patient): Observable<Patient> {   
+     alert(JSON.stringify(patient))
     return this.http.post<Patient>(
       `${this.baseUrl}/patient`,
-      patient
-    )
-  }
+      JSON.stringify(patient)
+      )}
 }
