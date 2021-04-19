@@ -29,6 +29,6 @@ export class PatientService {
      alert(JSON.stringify(patient))
     return this.http.post<Patient>(
       `${this.baseUrl}/patient`,
-      JSON.stringify(patient)
+       patient 
       )}
 }

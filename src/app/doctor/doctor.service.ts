@@ -28,7 +28,7 @@ export class DoctorService {
     alert(JSON.stringify(doctor)) 
     return this.http.post<Doctor>(
       `${this.baseUrl}/doctor`,
-      JSON.stringify(doctor)
+      doctor
     )
   }
 }
