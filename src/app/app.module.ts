@@ -1,3 +1,4 @@
+import { DoctorModule } from './doctor/doctor.module';
 import { LoginModule } from './login/login.module';
 import { PatientModule } from './patient/patient.module';
 import { NgModule } from '@angular/core';
@@ -18,6 +19,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     PatientModule,
+    DoctorModule,
     HttpClientModule,
     LoginModule
   ],
