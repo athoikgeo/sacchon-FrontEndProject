@@ -1,3 +1,4 @@
+import { NewConsultationComponent } from './doctor/new-consultation/new-consultation.component';
 import { ReporterListComponent } from './reporter/reporter-list/reporter-list.component';
 import { PatientInsertComponent } from './patient/patient-insert/patient-insert.component';
 import { NgModule } from '@angular/core';
@@ -6,44 +7,25 @@ import { PatientListComponent } from './patient/patient-list/patient-list.compon
 import { LoginFormComponent } from './login/login-form/login-form.component';
 import { DoctorListComponent } from './doctor/doctor-list/doctor-list.component';
 import { DoctorInsertComponent } from './doctor/doctor-insert/doctor-insert.component';
+import { DoctorProfileComponent } from './doctor/doctor-profile/doctor-profile.component';
+import { EditAccountComponent } from './doctor/edit-account/edit-account.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'login',pathMatch:'full'},
-  {
-    path: 'login',
-    component: LoginFormComponent
-  },
+  {path: 'login',component: LoginFormComponent},
+  {path: 'view',component: PatientListComponent},
+  {path: 'insert',component: PatientInsertComponent},
+  {path: 'view_doctors',component: DoctorListComponent},
+  {path: 'insert_doctor',component: DoctorInsertComponent},
+  {path: 'doctor_profile',component: DoctorProfileComponent},
+  {path: 'doctor_edit_account',component: EditAccountComponent},
+  {path: 'doctor_new_consultation',component: NewConsultationComponent},
 
-  {
-    path: 'view',
-    component: PatientListComponent
-  },
-  
-  {
-    path: 'insert',
-    component: PatientInsertComponent
-  },
-
-  {
-    path: 'view_doctors',
-    component: DoctorListComponent
-  },
-  
-  {
-    path: 'insert_doctor',
-    component: DoctorInsertComponent
-  },
-
-  {
-    path: 'view_reporters',
-    component: ReporterListComponent
-  },
-
+  {path: 'view_reporters',component: ReporterListComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-
   exports: [RouterModule]
 })
 

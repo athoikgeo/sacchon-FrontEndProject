@@ -1,0 +1,23 @@
+<p>doctor-profile works!</p>
+<button class = "btn btn-primary" (click) = "getMyProfile()">GET MY PROFILE</button>
+<div class = "row">
+  <div class="col-sm-4"></div>
+  <div class="card" style="width: 18rem;">
+    <h5 class="card-title">  {{doctor.firstName}} {{doctor.lastName}}</h5>
+    <div class="card-body">
+     <p class="card-text"> Role: {{doctor.role}}</p> 
+     <p class="card-text"> Username: {{doctor.username}}</p> 
+
+&nbsp;
+<button class = "btn btn-primary" (click) = "getMyPatients()">GET MY PATIENTS</button>
+
+    <div *ngFor="let patient of patients">
+        <div class="col-sm-4"></div>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{patient.firstName}} {{patient.lastName}}</h5>
+              <p class="card-text">Role: {{patient.role}}</p>    
+            </div>
+          </div>          
+    </div>
+</div>
