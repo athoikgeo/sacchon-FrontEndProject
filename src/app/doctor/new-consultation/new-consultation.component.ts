@@ -29,6 +29,7 @@ export class NewConsultationComponent implements OnInit {
     let consultation:Consultation = this.form.value;
 
 
+
     this.doctorService.addConsultation(consultation.doctorId, consultation).subscribe((data:Consultation) =>{
       console.log(data)
     }) 

@@ -1,5 +1,5 @@
 <div>
-    <form >
+    <form [formGroup]= "form"(ngSubmit)= "onClickSubmit()">
         <div class = "form-group">
             <label for= "firstnameInput">First Name</label>
             <input type="text"class = "form-control" id="firstname-input" formControlName="firstName">     
@@ -19,12 +19,12 @@
         
         <div class = "form-group">
             <label for= "usernameInput">User Name</label>
-            <input type="text"class = "form-control" id="usename-input" formControlName="userName">     
+            <input type="text"class = "form-control" id="usename-input" formControlName="username">     
         </div>
 
         <div class = "form-group">
             <label for= "passwordInput">Password</label>
-            <input type="text"class = "form-control" id="password-input" formControlName="passWord">     
+            <input type="text"class = "form-control" id="password-input" formControlName="password">     
         </div>
 
         <button class = "btn btn-primary">Submit</button>

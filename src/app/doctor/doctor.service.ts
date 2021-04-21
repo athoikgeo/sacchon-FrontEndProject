@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Doctor } from './doctor';
@@ -98,7 +98,8 @@ export class DoctorService {
 
   deleteAccount( doctorId: string): Observable<any>{
     return this.http.delete<any>(
-      `${this.baseUrl}/doctor/${doctorId}`
+      `${this.baseUrl}/doctor/${doctorId}`,
+      {headers:new HttpHeaders({'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")!)})}
     );
   }
 

@@ -7,14 +7,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DataTablesModule } from 'angular-datatables'
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -23,8 +22,7 @@ import { DataTablesModule } from 'angular-datatables'
     DoctorModule,
     ReporterModule,
     HttpClientModule,
-    LoginModule,
-    DataTablesModule
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
