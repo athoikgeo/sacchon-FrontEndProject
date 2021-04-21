@@ -49,7 +49,7 @@ getPatients(): Observable<Patient[]>{
 addPatient( patient: Patient): Observable<Patient> {   
      alert(JSON.stringify(patient))
     return this.http.post<Patient>(
-      `${this.baseUrl}/patient`,
+      `${this.baseUrl}/register/patient`,
        patient 
       )}
 
@@ -64,10 +64,11 @@ addMeasurement(patientId: string, measurement: Measurement ): Observable<any>{
   
 updateMeasurement( patientId: string,  measurement: Measurement): Observable<any>{
     return this.http.put<any>(
-      `${this.baseUrl}/patient/${patientId}/measurement`,
+      `${this.baseUrl}/patient/${patientId}/measurement/${measurement.measurementId}`,
       measurement 
     );
     }
+    
 deleteMeasurement( patientId: string,  measurementId: string): Observable<any>{
       return this.http.delete<any>(
         `${this.baseUrl}/patient/${patientId}/measurement/${measurementId}` 

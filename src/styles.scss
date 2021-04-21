@@ -1,2 +1,51 @@
 @import '~bootstrap/scss/bootstrap.scss';
  //@import "~datatables.net-bs4/css/dataTables.bootstrap4.min.css"
+ 
+ .welcome-page{
+    font: bold;
+    text-align: left;
+}
+ 
+.btnSubmit
+{
+    border:none;
+    border-radius:1.5rem;
+    padding: 1%;
+    width: 15%;
+    margin: 15px;
+    cursor: pointer;
+    background: #0062cc;
+    color: #fff;
+}
+ 
+.landing-page{
+    text-align: center;
+}
+ 
+a{
+    color: #fff;
+}
+ 
+body{
+    background: #b3cde0;
+}
+ 
+// font-family: 'Architects Daughter', cursive;
+// font-family: 'Lato', sans-serif;
+// font-family: 'Roboto', sans-serif;
+ 
+h1{
+    font-family: 'Roboto', sans-serif;
+}
+ 
+h2{
+    font-family: 'Lato', sans-serif;
+}
+ 
+h3{
+    font-family: 'Architects Daughter', cursive;
+}
+ 
+p{
+    font-family: 'Lato', sans-serif;
+}

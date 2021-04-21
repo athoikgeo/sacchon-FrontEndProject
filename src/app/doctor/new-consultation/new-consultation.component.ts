@@ -30,15 +30,15 @@ export class NewConsultationComponent implements OnInit {
 
 
 
-    this.doctorService.addConsultation(consultation.doctorId, consultation).subscribe((data:Consultation) =>{
+    this.doctorService.addConsultation(consultation).subscribe((data:Consultation) =>{
       console.log(data)
     }) 
  
-    this.doctorService.updateConsultation(consultation.doctorId, consultation).subscribe((data:Consultation) =>{
+    this.doctorService.updateConsultation(consultation).subscribe((data:Consultation) =>{
       console.log(data)
     })
 
-    this.doctorService.deleteConsultation(consultation.doctorId,consultation.consultationId).subscribe((data:Consultation) =>{
+    this.doctorService.deleteConsultation(consultation.consultationId).subscribe((data:Consultation) =>{
       console.log(data)
     })
 

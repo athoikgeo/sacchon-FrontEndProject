@@ -32,7 +32,7 @@ export class DoctorService {
   addDoctor( doctor: Doctor): Observable<Doctor> {  
     alert(JSON.stringify(doctor)) 
     return this.http.post<Doctor>(
-      `${this.baseUrl}/doctor`,
+      `${this.baseUrl}/register/doctor`,
       doctor
     )
   }
@@ -44,50 +44,53 @@ export class DoctorService {
       );
     }
 
-  getMyPatients(doctorId: string): Observable<any>{
-      return this.http.get<any>(
-        `${this.baseUrl}/doctor/${doctorId}/patient`
-        );
-      }
+  // getMyPatients(doctorId: string): Observable<any>{
+  //     return this.http.get<any>(
+  //       `${this.baseUrl}/doctor/${doctorId}/patient`
+  //       );
+  //     }
 
   getMyPatient(doctorId: string, patientId: string): Observable<any>{
         return this.http.get<any>(
-          `${this.baseUrl}/doctor/${doctorId}/patient/${patientId}`
+          `${this.baseUrl}/patient/${patientId}`
           );
         }
 
+
   getPatientMeasurements(doctorId: string, patientId: string): Observable<any>{
     return this.http.get<any>(
-      `${this.baseUrl}/doctor/${doctorId}/patient/${patientId}/measurement`
+      `${this.baseUrl}/patient/${patientId}/measurement`
       );
  
   }
 
-  getMyConsultations(doctorId: String): Observable<any>{
+  getMyConsultations(patientId: String): Observable<any>{
     return this.http.get<any>(
-      `${this.baseUrl}/doctor/${doctorId}/consultation`
+      `${this.baseUrl}/patient/${patientId}/consultation`
       );
   }
 
-  addConsultation(doctorId: string, consultation: Consultation ): Observable<any>{
+  addConsultation( consultation: Consultation ): Observable<any>{
     return this.http.post<any>(
-      `${this.baseUrl}/doctor/${doctorId}/consultation`,
+      `${this.baseUrl}/consultation`,
       consultation
     );
   }
 
-  updateConsultation( doctorId: string,  consultation: Consultation): Observable<any>{
+  updateConsultation(consultation: Consultation): Observable<any>{
     return this.http.put<any>(
-      `${this.baseUrl}/doctor/${doctorId}/consultation`,
+      `${this.baseUrl}/consultation/${consultation.consultationId}`,
       consultation 
     );
 
   }
-  deleteConsultation(doctorId: string, consultationId: string) {
+
+  deleteConsultation( consultationId: string) {
    return this.http.delete<any>(
-      `${this.baseUrl}/doctor/${doctorId}/consultation/${consultationId}` 
+      `${this.baseUrl}/consultation/${consultationId}` 
     );
    }
+
 
   updateAccount( doctorId: string,  doctor: Doctor): Observable<any>{
     return this.http.put<any>(
@@ -96,6 +99,7 @@ export class DoctorService {
     );
   }
 
+  
   deleteAccount( doctorId: string): Observable<any>{
     return this.http.delete<any>(
       `${this.baseUrl}/doctor/${doctorId}`,

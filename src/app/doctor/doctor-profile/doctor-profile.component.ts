@@ -31,7 +31,7 @@ export class DoctorProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMyProfile();
-	this.getMyPatients();
+	// this.getMyPatients();
 	this.getMyPatient();
 	this.getPatientMeasurements();
 	this.getMyConsultations();
@@ -45,13 +45,13 @@ export class DoctorProfileComponent implements OnInit {
 			
 		  });
 	}
-  getMyPatients(){
-		this.doctorService.getMyPatients(this.doctorId).subscribe(data =>{
-			this.patients =<Patient[]> data;
-			console.log(this.patients);
+//   getMyPatients(){
+// 		this.doctorService.getMyPatients(this.doctorId).subscribe(data =>{
+// 			this.patients =<Patient[]> data;
+// 			console.log(this.patients);
 				
-		});
-	}
+// 		});
+// 	}
 
   getMyPatient(){
 		this.doctorService.getMyPatient(this.doctorId, this.patientId).subscribe(data =>{
@@ -66,6 +66,7 @@ export class DoctorProfileComponent implements OnInit {
 			console.log(this.patients);		
 });
 }
+
 getMyConsultations(){
 	this.doctorService.getMyConsultations(this.doctorId).subscribe(data =>{
 		this.consultations =<Consultation[]> data;

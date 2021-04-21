@@ -1,7 +1,7 @@
-import { LoginService } from './login/login.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { LoginService } from './login.service';
 
 @Component({
   selector: 'app-root',

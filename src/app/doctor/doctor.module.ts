@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
 import { EditAccountComponent } from './edit-account/edit-account.component';
 import { NewConsultationComponent } from './new-consultation/new-consultation.component';
+import { DoctorLoginFormComponent } from './doctor-login-form/doctor-login-form.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { NewConsultationComponent } from './new-consultation/new-consultation.co
     DoctorProfileComponent,
     EditAccountComponent,
     NewConsultationComponent,
+    DoctorLoginFormComponent,
   ],
   imports: [
     CommonModule,

@@ -16,6 +16,7 @@ export class ReporterService {
       `${this.baseUrl}/reporter`
     )   
   }
+  
   // with authorization
 
   // getReporters(): Observable<Reporter[]>{

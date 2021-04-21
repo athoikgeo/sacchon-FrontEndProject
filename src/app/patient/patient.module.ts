@@ -6,6 +6,7 @@ import { PatientInsertComponent } from './patient-insert/patient-insert.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { MeasurementComponent } from './measurement/measurement.component';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
+import { PatientLoginFormComponent } from './patient-login-form/patient-login-form.component';
 
 
 
@@ -15,7 +16,8 @@ import { PatientProfileComponent } from './patient-profile/patient-profile.compo
     PatientInsertComponent,
     MeasurementComponent,
     PatientProfileComponent,
-    PatientEditAccountComponent
+    PatientEditAccountComponent,
+    PatientLoginFormComponent
     
   ],
 

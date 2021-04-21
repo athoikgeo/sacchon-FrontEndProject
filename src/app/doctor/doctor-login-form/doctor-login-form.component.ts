@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from '../login.service';
+import { LoginService } from 'src/app/login.service';
 
 @Component({
-  selector: 'app-login-form',
-  templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.scss']
+  selector: 'app-doctor-login-form',
+  templateUrl: './doctor-login-form.component.html',
+  styleUrls: ['./doctor-login-form.component.scss']
 })
-export class LoginFormComponent implements OnInit {
+export class DoctorLoginFormComponent implements OnInit {
 
   form!:FormGroup;
 
