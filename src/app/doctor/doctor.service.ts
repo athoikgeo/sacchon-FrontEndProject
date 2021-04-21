@@ -8,6 +8,7 @@ import { Consultation } from './consultation';
   providedIn: 'root'
 })
 export class DoctorService {
+ 
   getAllDoctorsPatients(id: any) {
     throw new Error('Method not implemented.');
   }
@@ -68,26 +69,41 @@ export class DoctorService {
       );
   }
 
-  addConsultation(doctorId: string, patientId: string, consultation: Consultation ): Observable<any>{
+  addConsultation(doctorId: string, consultation: Consultation ): Observable<any>{
     return this.http.post<any>(
-      `${this.baseUrl}/doctor/${doctorId}/patient/${patientId}/consultation`,
+      `${this.baseUrl}/doctor/${doctorId}/consultation`,
       consultation
     );
-  
   }
 
-  updateConsultation( doctorId: string, patientId: string, consultation: Consultation): Observable<any>{
+  updateConsultation( doctorId: string,  consultation: Consultation): Observable<any>{
     return this.http.put<any>(
-      `${this.baseUrl}/doctor/${doctorId}/patient/${patientId}/consultation`,
+      `${this.baseUrl}/doctor/${doctorId}/consultation`,
       consultation 
     );
-  }
 
-  deleteConsultation( doctorId: string, patientId: string, consultationId: string): Observable<any>{
-    return this.http.delete<any>(
-      `${this.baseUrl}/doctor/${doctorId}/patient/${patientId}/consultation/${consultationId}`
+  }
+  deleteConsultation(doctorId: string, consultationId: string) {
+   return this.http.delete<any>(
+      `${this.baseUrl}/doctor/${doctorId}/consultation/${consultationId}` 
+    );
+   }
+
+  updateAccount( doctorId: string,  doctor: Doctor): Observable<any>{
+    return this.http.put<any>(
+      `${this.baseUrl}/doctor/${doctorId}`,
+      doctor 
     );
   }
+
+  deleteAccount( doctorId: string): Observable<any>{
+    return this.http.delete<any>(
+      `${this.baseUrl}/doctor/${doctorId}`
+    );
+  }
+
+
+
 
   }
 

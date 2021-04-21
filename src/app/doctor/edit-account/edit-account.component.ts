@@ -1,4 +1,7 @@
+import { Doctor } from './../doctor';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { DoctorService } from '../doctor.service';
 
 @Component({
   selector: 'app-edit-account',
@@ -7,9 +10,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditAccountComponent implements OnInit {
 
-  constructor() { }
+  form!:FormGroup; 
+
+  constructor(private fb: FormBuilder, private doctorService:DoctorService) { }
 
   ngOnInit(): void {
-  }
+    this.form = this.fb.group({
+      doctorId:["",],
+      username:["",],
+      password:["",],
+      fistName:["",],
+      lastName: ["",],
+      role: ["",] 
 
+      })
+    }
+
+  onClickSubmit(){
+    
+    let doctor:Doctor = this.form.value;
+
+ 
+    this.doctorService.updateAccount(doctor.doctorId, doctor).subscribe((data:Doctor) =>{
+      console.log(data)
+    })
+
+    this.doctorService.deleteAccount(doctor.doctorId).subscribe((data:Doctor) =>{
+      console.log(data)
+    })
+
+  }
 }

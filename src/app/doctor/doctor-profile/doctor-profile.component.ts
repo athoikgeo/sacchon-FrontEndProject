@@ -11,12 +11,7 @@ import { Consultation } from '../consultation';
   templateUrl: './doctor-profile.component.html',
   styleUrls: ['./doctor-profile.component.scss']
 })
-export class DoctorProfileComponent implements OnInit {
-	
-
-	
-
-  
+export class DoctorProfileComponent implements OnInit {  
 
   constructor(private doctorService:DoctorService) { }
 
@@ -78,11 +73,6 @@ getMyConsultations(){
 });
 }
 
-// addConsultation(){
-// 	this.doctorService.addConsultation(this.doctorId, this.patientId,this.Consultation).subscribe(data =>{
-// 		this.consultations =<Consultation[]> data;
-// 		console.log(this.consultations);		
-// });
 
 }
 

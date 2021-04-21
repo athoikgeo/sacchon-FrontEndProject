@@ -1,9 +1,9 @@
 export interface Consultation {
-    consultationId: number;
+    consultationId: string;
     medication: string;
     dosage: string;
     date: Date;
-    doctorId: number;
-    patientId: number;
+    doctorId: string;
+    patientId: string;
 
 }
