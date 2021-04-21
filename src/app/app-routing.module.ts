@@ -1,3 +1,4 @@
+import { PatientLoginFormComponent } from './login/patient-login-form/patient-login-form.component';
 import { MeasurementComponent } from './patient/measurement/measurement.component';
 import { NewConsultationComponent } from './doctor/new-consultation/new-consultation.component';
 import { ReporterListComponent } from './reporter/reporter-list/reporter-list.component';
@@ -15,11 +16,13 @@ import { PatientEditAccountComponent } from './patient/patient-edit-account/pati
 
 const routes: Routes = [
   {path:'',redirectTo:'insert',pathMatch:'full'},
-  // {path: 'login',component: LoginFormComponent},
+  {path: 'login',component: PatientLoginFormComponent},
 
                 //reporter
-  {path: 'view',component: PatientListComponent , redirectTo:''},  
-  {path: 'view_doctors',component: DoctorListComponent}, 
+  {path: 'view',component: PatientListComponent },  
+  {path: 'doctors',redirectTo:'view_doctors',pathMatch:'full'}, 
+  {path: 'view_doctors',component: DoctorListComponent},
+
   {path: 'view_reporters',component: ReporterListComponent},
 
             // registration

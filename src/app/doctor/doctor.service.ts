@@ -44,20 +44,20 @@ export class DoctorService {
       );
     }
 
-  // getMyPatients(doctorId: string): Observable<any>{
-  //     return this.http.get<any>(
-  //       `${this.baseUrl}/doctor/${doctorId}/patient`
-  //       );
-  //     }
+  getMyPatients(doctorId: string): Observable<any>{
+      return this.http.get<any>(
+        `${this.baseUrl}/patient`
+        );
+      }
 
-  getMyPatient(doctorId: string, patientId: string): Observable<any>{
+  getMyPatient( patientId: string): Observable<any>{
         return this.http.get<any>(
           `${this.baseUrl}/patient/${patientId}`
           );
         }
 
 
-  getPatientMeasurements(doctorId: string, patientId: string): Observable<any>{
+  getPatientMeasurements(patientId: string): Observable<any>{
     return this.http.get<any>(
       `${this.baseUrl}/patient/${patientId}/measurement`
       );
@@ -100,7 +100,7 @@ export class DoctorService {
   }
 
   
-  deleteAccount( doctorId: string): Observable<any>{
+  deleteAccount(doctorId: string): Observable<any>{
     return this.http.delete<any>(
       `${this.baseUrl}/doctor/${doctorId}`,
       {headers:new HttpHeaders({'Authorization': 'Basic ' + btoa(sessionStorage.getItem("credentials")!)})}

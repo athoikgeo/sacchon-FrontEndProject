@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from 'src/app/login.service';
+import { LoginService } from 'src/app/login/login.service';
 
 @Component({
-  selector: 'app-reporter-login-form',
-  templateUrl: './reporter-login-form.component.html',
-  styleUrls: ['./reporter-login-form.component.scss']
+  selector: 'app-patient-login-form',
+  templateUrl: './patient-login-form.component.html',
+  styleUrls: ['./patient-login-form.component.scss']
 })
-export class ReporterLoginFormComponent implements OnInit {
+export class PatientLoginFormComponent implements OnInit {
 
   form!:FormGroup;
 
