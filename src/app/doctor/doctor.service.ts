@@ -71,29 +71,30 @@ export class DoctorService {
   //     );
   // }
 
-  addConsultation(doctorId: string, consultation: Consultation ): Observable<any>{
+  addConsultation(consultation: Consultation ): Observable<any>{
+    alert(JSON.stringify(consultation)) 
     return this.http.post<any>(
       `${this.baseUrl}/consultation`,
       consultation
     );
   }
 
-  updateConsultation( doctorId: string,  consultation: Consultation): Observable<any>{
-    return this.http.put<any>(
-      `${this.baseUrl}/consultation`,
-      consultation 
-    );
+  // updateConsultation(consultationId: String, consultation: Consultation): Observable<any>{
+  //   return this.http.put<any>(
+  //     `${this.baseUrl}/consultation/${consultationId}`,
+  //     consultation 
+  //   );
 
-  }
-  deleteConsultation(doctorId: string, consultationId: string) {
-   return this.http.delete<any>(
-      `${this.baseUrl}/doctor/${doctorId}/consultation/${consultationId}` 
-    );
-   }
+  // }
+  // deleteConsultation(consultationId: string) {
+  //  return this.http.delete<any>(
+  //     `${this.baseUrl}/consultation/${consultationId}` 
+  //   );
+  //  }
 
-  updateAccount( doctorId: string,  doctor: Doctor): Observable<any>{
+  updateAccount(doctor: Doctor): Observable<any>{
     return this.http.put<any>(
-      `${this.baseUrl}/doctor/${doctorId}`,
+      `${this.baseUrl}/doctor/1`,
       doctor 
     );
   }

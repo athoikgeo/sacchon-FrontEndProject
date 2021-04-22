@@ -33,13 +33,13 @@ export class MeasurementComponent implements OnInit {
       console.log(data)
     }) 
 
-    this.patientService.updateMeasurement(measurement.patientId, measurement).subscribe((data:Measurement) =>{
-      console.log(data)
-    })
+    // this.patientService.updateMeasurement(measurement.patientId, measurement).subscribe((data:Measurement) =>{
+    //   console.log(data)
+    // })
 
-    this.patientService.deleteMeasurement(measurement.patientId, measurement.measurementId).subscribe((data:Measurement) =>{
-      console.log(data)
-    })
+    // this.patientService.deleteMeasurement(measurement.patientId, measurement.measurementId).subscribe((data:Measurement) =>{
+    //   console.log(data)
+    // })
 
 
 }

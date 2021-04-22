@@ -1,1 +1,29 @@
-<p>measurement works!</p>
+<div>
+    <h5> Dear user,Please complete the following form to submit your medical data:</h5>
+     <form [formGroup]= "form"(ngSubmit)= "onClickSubmit()">
+         <div class = "form-group">
+             <label for= "dateInput">Date</label>
+             <input type="text"class = "form-control" id="date-input" formControlName="date">     
+         </div>
+ 
+     
+         <div class = "form-group">
+             <label for= "carbInInput">Carb Intake (grams)</label>
+             <input type="text"class = "form-control" id="carbIn-input" formControlName="carbIn">     
+         </div>
+ 
+         <div class = "form-group">
+             <label for= "glucoseLevelInput">Glucose level (mg/dL)</label>
+             <input type="text"class = "form-control" id="glucoseLevel-input" formControlName="glucoseLevel">     
+         </div>
+ 
+         
+         <div class = "form-group">
+             <label for= "patientIdInput">Patient Id</label>
+             <input type="text"class = "form-control" id="patientId-input" formControlName="patientId">     
+         </div>
+ 
+         <button class = "btn btn-primary">Submit</button>
+ 
+     </form>
+ </div>

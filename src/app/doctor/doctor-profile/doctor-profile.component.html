@@ -14,6 +14,7 @@
           <th scope="col"></th>
         </tr>
         <tr>
+          <th scope="col">Patient id</th>
           <th scope="col">Firstname</th>
           <th scope="col">Lastname</th>
           <th scope="col">Username</th>
@@ -24,13 +25,14 @@
       <tbody *ngFor="let patient of patients">
         <tr>
           <!-- <th scope="row"></th> -->
+          <td>{{patient.patientId}}</td>
           <td>{{patient.firstName}}</td>
           <td>{{patient.lastName}}</td>
           <td>{{patient.username}}</td>
-          <td><button type="button" class="btn btn-outline-info">Data</button>
+          <!-- <td><button type="button" class="btn btn-outline-info">Data</button> -->
 
             <!-- <a href="#" onclick="f1()">jhhghj</a> -->
-          </td>
+          <!-- </td> -->
 
         </tr>
 
@@ -51,24 +53,23 @@
           </tr>
           <tr>
             <th scope="col">patientId </th>
+            <th scope="col">CarbIn (grams) </th>
+            <th scope="col">Glucose Level (mg/dL)</th>
             <th scope="col">date</th>
-            <th scope="col">CarbIn </th>
-            <th scope="col">Glycoze Level</th>
 
           </tr>
         </thead>
         <tbody *ngFor="let measurement of measurements">
           <tr>
             <!-- <th scope="row"></th> -->
+            <td>{{measurement.patientId}}</td>            
+            <td>{{measurement.carbIn}}</td>
             <td>{{measurement.glucoseLevel}}</td>
             <td>{{measurement.date | date:"dd/MM/yyyy"}}</td>
-            <td>{{measurement.carbIn}}</td>
-            <td>{{measurement.patientId}}</td>
 
-            <td><button type="button" class="btn btn-outline-info">Data</button>
-
+            <!-- <td><button type="button" class="btn btn-outline-info">Data</button> -->
               <!-- <a href="#" onclick="f1()">jhhghj</a> -->
-            </td>
+            <!-- </td> -->
 
           </tr>
 

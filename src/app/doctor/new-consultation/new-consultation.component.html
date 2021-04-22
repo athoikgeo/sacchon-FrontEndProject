@@ -1,1 +1,36 @@
-<p>new-consultation works!</p>
+<div>
+    <form [formGroup]= "form"(ngSubmit)= "onClickSubmit()">
+        <h5>Dear doctor, Please complete the following template to consult your patient:</h5>
+
+        <form [formGroup]= "form"(ngSubmit)= "onClickSubmit()">
+            <div class = "form-group">
+                <label for= "medicationInput">Medication:</label>
+                <input type="text"class = "form-control" id="medication-input" formControlName="medication">     
+            </div>
+    
+        
+            <div class = "form-group">
+                <label for= "dosageInput">Dosage:</label>
+                <input type="text"class = "form-control" id="dosage-input" formControlName="dosage">     
+            </div>
+    
+            
+            <div class = "form-group">
+                <label for= "dateInput">Date:</label>
+                <input type="text"class = "form-control" id="date-input" formControlName="date">     
+            </div>
+
+            <div class = "form-group">
+                <label for= "doctorIdInput">Doctor id:</label>
+                <input type="text"class = "form-control" id="doctorId-input" formControlName="doctorId">     
+            </div>
+    
+            <div class = "form-group">
+                <label for= "patientIdInput">Patient id:</label>
+                <input type="text"class = "form-control" id="patientId-input" formControlName="patientId">     
+            </div>
+    
+            <button class = "btn btn-primary">Submit</button>
+    
+        </form>
+    

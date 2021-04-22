@@ -25,6 +25,7 @@ const routes: Routes = [
     component: DoctorComponent,
     children: [
       { path: '', redirectTo: 'doctor_profile', pathMatch: 'full' },
+      { path: 'view', component: PatientListComponent },
       { path: 'view_doctors', component: DoctorListComponent },
       { path: 'doctor_profile', component: DoctorProfileComponent },
       { path: 'doctor_edit_account', component: EditAccountComponent },
@@ -37,7 +38,6 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'patient_profile', pathMatch: 'full' },
       { path: 'patient_profile', component: PatientProfileComponent },
-      { path: 'view', component: PatientListComponent },
       { path: 'patient_measurement', component: MeasurementComponent },
       { path: 'patient_edit_account', component: PatientEditAccountComponent }
     ]

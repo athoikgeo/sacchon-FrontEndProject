@@ -27,7 +27,7 @@ export class PatientService {
   // )}
 
   addPatient( patient: Patient): Observable<Patient> {   
-     alert(JSON.stringify(patient))
+     alert("Saved successfully "+JSON.stringify(patient))
     return this.http.post<Patient>(
       `${this.baseUrl}/patient`,
        patient 
@@ -60,30 +60,26 @@ export class PatientService {
       //   {headers: new HttpHeaders({'Authorization':'Basic' + btoa(sessionStorage.getItem("credentials"))})}
       // )}
     
-    
-    
       
     addMeasurement(patientId: string, measurement: Measurement ): Observable<any>{
+      alert("Saved succesfully: "+JSON.stringify(measurement))
       return this.http.post<any>(
-        `${this.baseUrl}/patient/${patientId}/measurement`,
+        `${this.baseUrl}/measurement`,
         measurement
       )}
     
       
-    updateMeasurement( patientId: string,  measurement: Measurement): Observable<any>{
-        return this.http.put<any>(
-          `${this.baseUrl}/patient/${patientId}/measurement`,
-          measurement 
-        );
-        }
-    deleteMeasurement( patientId: string,  measurementId: string): Observable<any>{
-          return this.http.delete<any>(
-            `${this.baseUrl}/patient/${patientId}/measurement/${measurementId}` 
-          );
-      
-    
-    
-    }
+    // updateMeasurement( patientId: string,  measurement: Measurement): Observable<any>{
+    //     return this.http.put<any>(
+    //       `${this.baseUrl}/patient/${patientId}/measurement`,
+    //       measurement 
+    //     );
+    //     }
+    // deleteMeasurement( patientId: string,  measurementId: string): Observable<any>{
+    //       return this.http.delete<any>(
+    //         `${this.baseUrl}/patient/${patientId}/measurement/${measurementId}` 
+    //       );   
+    // }
     
     
     updateAccount( patientId: string,  patient: Patient): Observable<any>{

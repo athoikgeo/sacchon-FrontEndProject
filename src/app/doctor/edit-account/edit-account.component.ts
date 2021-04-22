@@ -13,7 +13,8 @@ export class EditAccountComponent implements OnInit {
   form!:FormGroup; 
 
   constructor(private fb: FormBuilder, private doctorService:DoctorService) { }
-
+  doctorId: string = '1';
+  
   ngOnInit(): void {
     this.form = this.fb.group({
       doctorId:["",],
@@ -29,9 +30,9 @@ export class EditAccountComponent implements OnInit {
   onClickSubmit(){
     
     let doctor:Doctor = this.form.value;
-
+    
  
-    this.doctorService.updateAccount(doctor.doctorId, doctor).subscribe((data:Doctor) =>{
+    this.doctorService.updateAccount(doctor).subscribe((data:Doctor) =>{
       console.log(data)
     })
 

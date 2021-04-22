@@ -16,6 +16,7 @@
               <th scope="col"></th>
            
             <tr>
+              <th scope="col">Consultation id</th>
               <th scope="col">Medication</th>
               <th scope="col">Dosage</th>
               <th scope="col">Date</th>
@@ -28,17 +29,60 @@
             <tr>
               <!-- <th scope="row"></th> -->
               <td>{{consultation.consultationId}}</td>
-              <td>{{consultation.date}}</td>
               <td>{{consultation.medication}}</td>
               <td>{{consultation.dosage}}</td>
+              <td>{{consultation.date | date:"dd/MM/yyyy"}}</td>
+              <td>{{consultation.doctorId}}</td>
+              <td>{{consultation.patientId}}</td>
               
-              <td><button type="button" class="btn btn-outline-info" >Data</button>
+              
+              
+              <!-- <td><button type="button" class="btn btn-outline-info" >Data</button> -->
 
                 <!-- <a href="#" onclick="f1()">jhhghj</a> -->
-              </td>
+              <!-- </td> -->
             
             </tr>
         
           </tbody>
         </table>
 
+     
+    &nbsp;
+    <ul class="list-group">
+      <table class="table" title="My Measurements">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col">My Measurements</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+          <tr>
+            <th scope="col">patientId </th>
+            <th scope="col">CarbIn (grams) </th>
+            <th scope="col">Glucose Level (mg/dL)</th>
+            <th scope="col">date</th>
+
+          </tr>
+        </thead>
+        <tbody *ngFor="let measurement of measurements">
+          <tr>
+            <!-- <th scope="row"></th> -->
+            <td>{{measurement.patientId}}</td>            
+            <td>{{measurement.carbIn}}</td>
+            <td>{{measurement.glucoseLevel}}</td>
+            <td>{{measurement.date | date:"dd/MM/yyyy"}}</td>
+
+            <!-- <td><button type="button" class="btn btn-outline-info">Data</button> -->
+              <!-- <a href="#" onclick="f1()">jhhghj</a> -->
+            <!-- </td> -->
+
+          </tr>
+
+
+        </tbody>
+      </table>
+
+    </ul>

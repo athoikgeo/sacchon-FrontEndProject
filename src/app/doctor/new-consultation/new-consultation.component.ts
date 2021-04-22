@@ -29,17 +29,17 @@ export class NewConsultationComponent implements OnInit {
     let consultation:Consultation = this.form.value;
 
 
-    this.doctorService.addConsultation(consultation.doctorId, consultation).subscribe((data:Consultation) =>{
+    this.doctorService.addConsultation(consultation).subscribe((data:Consultation) =>{
       console.log(data)
     }) 
  
-    this.doctorService.updateConsultation(consultation.doctorId, consultation).subscribe((data:Consultation) =>{
-      console.log(data)
-    })
+    // this.doctorService.updateConsultation(consultation.doctorId, consultation).subscribe((data:Consultation) =>{
+    //   console.log(data)
+    // })
 
-    this.doctorService.deleteConsultation(consultation.doctorId,consultation.consultationId).subscribe((data:Consultation) =>{
-      console.log(data)
-    })
+    // this.doctorService.deleteConsultation(consultation.consultationId).subscribe((data:Consultation) =>{
+    //   console.log(data)
+    // })
 
   }
 
