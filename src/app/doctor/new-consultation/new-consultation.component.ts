@@ -1,3 +1,4 @@
+import { Patient } from './../../patient/patient';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Consultation } from '../consultation';
@@ -13,6 +14,7 @@ export class NewConsultationComponent implements OnInit {
   form!:FormGroup; 
 
   constructor(private fb: FormBuilder, private doctorService:DoctorService) { }
+  
 
   ngOnInit(): void {
     this.form = this.fb.group({

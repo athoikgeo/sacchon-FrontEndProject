@@ -1,7 +1,7 @@
 <!-- <button class = "btn btn-primary" (click) = "getMyProfile()">GET MY PROFILE</button> -->
 
 
-     <h5>Welcome doctor {{doctor.firstName}} {{doctor.lastName}}!</h5>
+     <!-- <h5>Welcome doctor {{doctor.firstName}} {{doctor.lastName}}!</h5>
 <div class = "row">
   <div class="col-sm-4"></div>
 
@@ -26,8 +26,8 @@
           </thead>
           <tbody *ngFor="let patient of patients">
             <tr>
-              <!-- <th scope="row"></th> -->
-              <td>{{patient.firstName}}</td>
+             <th scope="row"></th> -->
+              <!-- <td>{{patient.firstName}}</td>
               <td>{{patient.lastName}}</td>
               <td>{{patient.username}}</td>
               <td><button type="button" class="btn btn-outline-info">Data</button>
@@ -38,4 +38,80 @@
           </tbody>
         </table>
       </ul>          
-    </div>
+    </div> --> 
+
+    <div class="container-fluid h-100">
+      <div class="row justify-content-center py-3 align-items-between h-100">
+        <div class="col-3">
+          <div class="card h-100" name="chief-details">
+            <div class="card-body row justify-content-center">
+              <h5 class="card-title text-center col-12">Doctor profile
+                <br>
+                <br>
+                <img src="../../assets/images/reporter-images.jpg" alt="" width="100" height="100">
+              </h5>
+              <div class="card-text align-items-start justify-content-start w-75 py-5">
+                <div>
+                  <strong>Name:</strong>
+                  <span class="float-right">{{ doctor.firstName }}</span>
+                </div>
+                <div>
+                  <strong>Surname:</strong>
+                  <span class="float-right">{{ doctor.lastName }}</span>
+                </div>
+              
+              <div class="row align-items-center w-75 mt-auto">
+                
+                <!-- <a [routerLink]="['/doctoradvice/availablepatients']"
+                  class="btn btn-block btn-outline-primary border-0 text-left my-2 py-2">
+                  <i class="fa fa-user-plus px-2" aria-hidden="true"></i>
+                  <span>Search Patients</span>
+                  <span *ngIf="availablePatients > 0"
+                    class="badge badge-danger badge-pill pull-right notification-index">{{ availablePatients }}</span>
+                </a> -->
+                <!-- <a [routerLink]="['/doctoradvice/consultrablepatients']"
+                  class="btn btn-block btn-outline-primary border-0 text-left my-2 py-2">
+                  <i class="fa fa-exclamation-triangle px-2" aria-hidden="true"></i>
+                  <span>Consult Patients</span>
+                  <span *ngIf="consultablePatients > 0"
+                    class="badge badge-danger badge-pill pull-right notification-index">{{ consultablePatients }}</span>
+                </a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-9">
+         
+              <ul class="list-group">
+                <table class="table" title="My patients">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">My patients</th>
+                      <th scope="col"></th>
+                    </tr>
+                    <tr>
+                      <th scope="col">Firstname</th>
+                      <th scope="col">Lastname</th>
+                      <th scope="col">Username</th>
+                      <th scope="col"></th>
+        
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let patient of patients">
+                    <tr>
+                      <td>{{patient.firstName}}</td>
+                      <td>{{patient.lastName}}</td>
+                      <td>{{patient.username}}</td>
+                      <td><button type="button" class="btn btn-outline-info">Data</button>
+                      </td>
+                    
+                    </tr>
+                
+                  </tbody>
+                </table>
+              </ul>          
+            </div>
+          </div>
+        </div>
+  

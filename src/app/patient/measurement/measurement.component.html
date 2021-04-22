@@ -1,1 +1,78 @@
-<p>measurement works!</p>
+<!-- <app-patient-nav></app-patient-nav> -->
+
+  <div  class="container" >
+    <h2 class="title text-center" style="margin-top:50px;">Medical Data</h2>
+    <h5 class="title text-left" style="padding-bottom:15px;">
+      In this page the patient would be able to store their data
+      (blood glucose level, carb intake). Also it is important to 
+      view their data in Chart.
+    </h5>
+ 
+        </div>
+
+    
+    
+    <table id="myTable" class="table table-hover  table-responsive-md  text-center">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Carb Intake</th>
+          <th scope="col">Blood Glucose Level</th>
+          <th scope="col">Date</th>
+          <th scope="col">Update</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="scope"></th>
+          <td >measurement.carbIn grams</td>
+          <td >measurement.glucoseLevel mg/dL</td>
+          <!-- <td><button class="btn" data-toggle="modal" data-target="#update" type="submit" (onClickSubmit="getData(medi.measurementID)"><i class="fa fa-edit fa-lg" aria-hidden="true"></i></button></td>
+          <td><button class="btn" type="submit" (onClickSubmit="deleteData(medi.measurementID)"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></button></td> -->
+        </tr>
+    </tbody>
+    </table>
+    
+    <h2 class="title text-center" style="padding:10px 0 10px;">Chart Representation</h2>
+<!--    
+    <div *ngIf = "mediData">
+      <codehub-charts-data [carbValues]="carbIntake" [glucoseValues]="bloodGlucoseLevel" [dateValues] = "measurementDate" ></codehub-charts-data>
+    </div> -->
+     <!-- Modal -->
+<div class="modal fade " id="update" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Update measurment</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="container" style="align-items: center; ">
+          <form>
+            <div class="form-group row"> 
+                <div class="form-group col-sm-3 col-sm-push-4">
+                <label>Carbs (grams)</label>
+                <input type="number" class="form-control" id="carbModal" value=measurement.carbIntake \>
+              </div>
+              
+              <div class="form-group col-sm-3 col-sm-push-4">
+                  <label>Glucose ( mg/dL) </label>
+                  <input type="number"class="form-control" id="gluModal" value=measurement.bloodGlucoseLevel \>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (onClickSubmit=updateMeasurement(mediDataObj?.measurementID>Save changes</button>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -12,11 +12,17 @@ import { DoctorProfileComponent } from './doctor/doctor-profile/doctor-profile.c
 import { EditAccountComponent } from './doctor/edit-account/edit-account.component';
 import { PatientProfileComponent } from './patient/patient-profile/patient-profile.component';
 import { PatientEditAccountComponent } from './patient/patient-edit-account/patient-edit-account.component';
+import { DoctorLoginFormComponent } from './login/doctor-login-form/doctor-login-form.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 const routes: Routes = [
   {path:'',redirectTo:'insert',pathMatch:'full'},
-  {path: 'login',component: PatientLoginFormComponent},
+  // {path: 'login',component: DoctorLoginFormComponent},
+{path: '', component: WelcomeComponent},
+{path: 'home', component: WelcomeComponent},
+// {path: 'register', component: RegisterComponent},
+{path:'login',component: DoctorLoginFormComponent},
 
                 //reporter
   {path: 'view',component: PatientListComponent },  

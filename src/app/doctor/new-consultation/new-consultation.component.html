@@ -1,1 +1,81 @@
-<p>new-consultation works!</p>
+<!-- <app-doctor-nav></app-doctor-nav>
+   -->
+  <h3 style="text-align: center;">Consultation records</h3>
+  <div style="width: 60%; text-align: center; margin-left:10%;">
+    <h5 class="display-5" style="padding: 1% ;text-align: left;">Patient's profile</h5>
+    <table class="table table-hover table-responsive-sm " >
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">First&LastName</th>
+          <th scope="col">Username/th>
+          <th scope="col">View patient measurements</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- <td>{{patient.patientId}}&nbsp;{{patient.lastname}}</td>
+          <td>{{patient.username}</td>
+     -->
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="container" style="width: 60%; margin-left: 10%;">
+      <h4>New consult</h4>
+  <div class="input-group" >
+      
+      <textarea class="form-control" style="height: 45px;" id="myConsult" aria-label="With textarea"></textarea>
+      <div class="input-group-append" id="button-addon4">
+          <button class="btn btn-primary" (onClickSubmit="addConsultation(consultation))" type="button">Submit consult</button>
+        </div>
+    </div>
+  </div>
+
+    <br>
+    <br>
+
+    <div class="container" style="width: 60%; margin-left: 10%;">
+        <h4>Consultations history</h4>
+    <div style="margin: 1%;" class="input-group" >
+        y
+        <textarea readonly  class="form-control" style="height: 45px;" aria-label="With textarea">consultation</textarea>
+        <div class="input-group-append" id="button-addon4">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#update" type="button"  >edit</button>
+            <button class="btn btn-secondary" (onClickSubmit="deleteConsultation(consultation.consultationId))" type="button">delete</button>
+          </div>
+          
+      </div>
+    </div>
+
+    <!-- Modal -->
+<div class="modal fade " id="update" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Update Consultation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form>
+      <div class="modal-body">
+       
+        <div class="container" style="align-items: center; ">
+          
+          <label>Write updated consultation</label>
+        <input id="textE" type="text"  class="form-control" style="height: 45px;"  value=consultation>
+        </div>
+      
+
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (onClickSubmit="updateConsultation(consultation))">Save changes</button>
+      </div>
+    </div>
+    </form>
+    </div>
+  </div>
+</div>
+  
