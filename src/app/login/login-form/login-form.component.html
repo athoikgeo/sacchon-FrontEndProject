@@ -1,12 +1,53 @@
-<form [formGroup]="form" (ngSubmit)="logIn()">
-    <div class="form-group mr-2">
-        <label for="username">Username</label>
-        <input class="form-control" type="text" id="username" formControlName="username"> 
-    </div>
-    <label for="username">Password</label>
-    <div class="form-group mr-2">
-        <input class="form-control" type="text" id="password" formControlName="password">
- 
-        <button class="btn btn-primary">LOG IN</button>
-    </div>
-</form>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/insert']">Patient Registration</a>
+      </li>
+     
+              <!-- DOCTOR STARTS -->
+
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/insert_doctor']">Doctor Registration</a>
+        </li>
+      </ul>
+    </ul>
+
+  </div>
+</nav>
+<div>
+    <label>PATIENT</label>
+    <form [formGroup]="form" (ngSubmit)="loginPatient()">
+        <div class="form-group mr-2">
+            <label for="username">Username</label>
+            <input class="form-control" type="text" id="username" formControlName="username">
+        </div>
+        <label for="username">Password</label>
+        <div class="form-group mr-2">
+            <input class="form-control" type="text" id="password" formControlName="password">
+            <button class="btn btn-primary">LOG IN</button>
+        </div>
+    </form>
+</div>
+<div>
+    <label>DOCTOR</label>
+    <form [formGroup]="form" (ngSubmit)="loginDoctor()">
+        <div class="form-group mr-2">
+            <label for="username">Username</label>
+            <input class="form-control" type="text" id="username" formControlName="username">
+        </div>
+        <label for="username">Password</label>
+        <div class="form-group mr-2">
+            <input class="form-control" type="text" id="password" formControlName="password">
+
+            <button class="btn btn-primary">LOG IN</button>
+        </div>
+    </form>
+</div>

@@ -1,1 +1,44 @@
-<p>patient-profile works!</p>
+<h5>Welcome {{patient.firstName}} {{patient.lastName}}!</h5>
+<div class = "row">
+  <div class="col-sm-4"></div>
+
+   
+    
+&nbsp;
+      <ul class="list-group">
+        <table class="table" title="My Consultations">
+          <thead>
+         
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col">My Consultations</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+           
+            <tr>
+              <th scope="col">Medication</th>
+              <th scope="col">Dosage</th>
+              <th scope="col">Date</th>
+              <th scope="col">Doctor Id</th>
+              <th scope="col">Patient Id</th>
+
+            </tr>
+          </thead>
+          <tbody *ngFor="let consultation of consultations">
+            <tr>
+              <!-- <th scope="row"></th> -->
+              <td>{{consultation.consultationId}}</td>
+              <td>{{consultation.date}}</td>
+              <td>{{consultation.medication}}</td>
+              <td>{{consultation.dosage}}</td>
+              
+              <td><button type="button" class="btn btn-outline-info" >Data</button>
+
+                <!-- <a href="#" onclick="f1()">jhhghj</a> -->
+              </td>
+            
+            </tr>
+        
+          </tbody>
+        </table>
+

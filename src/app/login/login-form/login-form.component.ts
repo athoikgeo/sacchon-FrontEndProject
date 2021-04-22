@@ -26,13 +26,23 @@ export class LoginFormComponent implements OnInit {
     let password: string;
     let responseString = this.loginService.authentication(this.form.value);
     if(responseString == "OK"){
-      // username = this.form.get('username').value;
-      // password = this.form.get('password').value;
-      // sessionStorage.setItem("credentials",username + ":" + password);
+      username = this.form.get('username')?.value;
+      password = this.form.get('password')?.value;
+      sessionStorage.setItem("credentials",username + ":" + password);
       this.router.navigate(['view'])
     }
     else{
       alert("Wrong username or password");
     }
+  }
+
+  loginPatient(){
+    this.loginService.authentication(this.form.value);
+    this.router.navigate(['patient'])
+  }
+
+  loginDoctor(){
+    this.loginService.authentication(this.form.value);
+    this.router.navigate(['doctor'])
   }
 }

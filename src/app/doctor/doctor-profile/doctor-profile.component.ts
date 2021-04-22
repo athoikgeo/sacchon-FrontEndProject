@@ -34,7 +34,7 @@ export class DoctorProfileComponent implements OnInit {
 	this.getMyPatients();
 	this.getMyPatient();
 	this.getPatientMeasurements();
-	this.getMyConsultations();
+	// this.getMyConsultations();
   }
 
   getMyProfile(){
@@ -46,7 +46,7 @@ export class DoctorProfileComponent implements OnInit {
 		  });
 	}
   getMyPatients(){
-		this.doctorService.getMyPatients(this.doctorId).subscribe(data =>{
+		this.doctorService.getMyPatients().subscribe(data =>{
 			this.patients =<Patient[]> data;
 			console.log(this.patients);
 				
@@ -61,17 +61,17 @@ export class DoctorProfileComponent implements OnInit {
 	}
 
   getPatientMeasurements(){
-	this.doctorService.getPatientMeasurements(this.doctorId, this.patientId).subscribe(data =>{
+	this.doctorService.getPatientMeasurements().subscribe(data =>{
 			this.measurements =<Measurement[]> data;
-			console.log(this.patients);		
+			console.log(this.measurements);		
 });
 }
-getMyConsultations(){
-	this.doctorService.getMyConsultations(this.doctorId).subscribe(data =>{
-		this.consultations =<Consultation[]> data;
-		console.log(this.consultations);		
-});
-}
+// getMyConsultations(){
+// 	this.doctorService.getMyConsultations(this.doctorId).subscribe(data =>{
+// 		this.consultations =<Consultation[]> data;
+// 		console.log(this.consultations);		
+// });
+// }
 
 
 }

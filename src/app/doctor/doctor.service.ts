@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Doctor } from './doctor';
@@ -44,41 +44,43 @@ export class DoctorService {
       );
     }
 
-  getMyPatients(doctorId: string): Observable<any>{
+  getMyPatients(): Observable<any>{
       return this.http.get<any>(
-        `${this.baseUrl}/doctor/${doctorId}/patient`
+        `${this.baseUrl}/patient`
         );
       }
 
   getMyPatient(doctorId: string, patientId: string): Observable<any>{
         return this.http.get<any>(
-          `${this.baseUrl}/doctor/${doctorId}/patient/${patientId}`
+          `${this.baseUrl}/patient/${patientId}`
           );
         }
 
-  getPatientMeasurements(doctorId: string, patientId: string): Observable<any>{
+  getPatientMeasurements(): Observable<any>{
     return this.http.get<any>(
-      `${this.baseUrl}/doctor/${doctorId}/patient/${patientId}/measurement`
+      `${this.baseUrl}/measurement`,
+     {headers: new HttpHeaders({'Authorization':'Basic' + btoa(sessionStorage.getItem("credentials")!)})}
+
       );
  
   }
 
-  getMyConsultations(doctorId: String): Observable<any>{
-    return this.http.get<any>(
-      `${this.baseUrl}/doctor/${doctorId}/consultation`
-      );
-  }
+  // getMyConsultations(doctorId: String): Observable<any>{
+  //   return this.http.get<any>(
+  //     `${this.baseUrl}/consultation`
+  //     );
+  // }
 
   addConsultation(doctorId: string, consultation: Consultation ): Observable<any>{
     return this.http.post<any>(
-      `${this.baseUrl}/doctor/${doctorId}/consultation`,
+      `${this.baseUrl}/consultation`,
       consultation
     );
   }
 
   updateConsultation( doctorId: string,  consultation: Consultation): Observable<any>{
     return this.http.put<any>(
-      `${this.baseUrl}/doctor/${doctorId}/consultation`,
+      `${this.baseUrl}/consultation`,
       consultation 
     );
 

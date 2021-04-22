@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './../app-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PatientListComponent } from './patient-list/patient-list.component';
@@ -6,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MeasurementComponent } from './measurement/measurement.component';
 import { PatientProfileComponent } from './patient-profile/patient-profile.component';
 import { PatientEditAccountComponent } from './patient-edit-account/patient-edit-account.component';
+import { PatientComponent } from './patient.component';
 
 
 
@@ -15,12 +17,14 @@ import { PatientEditAccountComponent } from './patient-edit-account/patient-edit
     PatientInsertComponent,
     MeasurementComponent,
     PatientProfileComponent,
-    PatientEditAccountComponent
+    PatientEditAccountComponent,
+    PatientComponent
   ],
 
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ]
 })
 

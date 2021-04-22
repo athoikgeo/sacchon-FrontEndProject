@@ -12,22 +12,38 @@ import { EditAccountComponent } from './doctor/edit-account/edit-account.compone
 import { PatientProfileComponent } from './patient/patient-profile/patient-profile.component';
 import { MeasurementComponent } from './patient/measurement/measurement.component';
 import { PatientEditAccountComponent } from './patient/patient-edit-account/patient-edit-account.component';
+import { DoctorComponent } from './doctor/doctor.component';
+import { PatientComponent } from './patient/patient.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'login',pathMatch:'full'},
-  {path: 'login',component: LoginFormComponent},
-  {path: 'view',component: PatientListComponent},
-  {path: 'insert',component: PatientInsertComponent},
-  {path: 'view_doctors',component: DoctorListComponent},
-  {path: 'insert_doctor',component: DoctorInsertComponent},
-  {path: 'doctor_profile',component: DoctorProfileComponent},
-  {path: 'doctor_edit_account',component: EditAccountComponent},
-  {path: 'doctor_new_consultation',component: NewConsultationComponent},
-  {path: 'patient_profile',component: PatientProfileComponent},
-  {path: 'patient_measurement',component: MeasurementComponent},
-  {path: 'view_reporters',component: ReporterListComponent},
-  {path: 'patient_edit_account', component: PatientEditAccountComponent},
-  {path: 'view_reporters',component: ReporterListComponent}
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginFormComponent },
+  { path: 'insert', component: PatientInsertComponent },
+  { path: 'insert_doctor', component: DoctorInsertComponent },
+  {
+    path: 'doctor',
+    component: DoctorComponent,
+    children: [
+      { path: '', redirectTo: 'doctor_profile', pathMatch: 'full' },
+      { path: 'view_doctors', component: DoctorListComponent },
+      { path: 'doctor_profile', component: DoctorProfileComponent },
+      { path: 'doctor_edit_account', component: EditAccountComponent },
+      { path: 'doctor_new_consultation', component: NewConsultationComponent },
+    ]
+  },
+  {
+    path: 'patient',
+    component: PatientComponent,
+    children: [
+      { path: '', redirectTo: 'patient_profile', pathMatch: 'full' },
+      { path: 'patient_profile', component: PatientProfileComponent },
+      { path: 'view', component: PatientListComponent },
+      { path: 'patient_measurement', component: MeasurementComponent },
+      { path: 'patient_edit_account', component: PatientEditAccountComponent }
+    ]
+  }
+
+  // { path: 'view_reporters', component: ReporterListComponent }
 ];
 
 @NgModule({

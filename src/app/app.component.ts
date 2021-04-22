@@ -19,14 +19,14 @@ export class AppComponent implements OnInit,OnDestroy{
   constructor(private router:Router, private loginServise:LoginService){}
 
   ngOnInit(): void {
-    if(sessionStorage.getItem("credentials") == null){
-     this.isLogged = false;
-     this.router.navigate(['login'])
-  }
-  else{
-    this.isLogged = true
-    this.router.navigate(['view'])
-  }
+  //   if(sessionStorage.getItem("credentials") == null){
+  //    this.isLogged = false;
+  //    this.router.navigate(['login'])
+  // }
+  // else{
+  //   this.isLogged = true
+  //   this.router.navigate(['view'])
+  // }
    
     this.subscription = this.loginServise.responsibleOfAuth.subscribe(data =>{
     this.isLogged = data;

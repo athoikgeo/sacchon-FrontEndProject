@@ -1,23 +1,79 @@
-<p>doctor-profile works!</p>
-<button class = "btn btn-primary" (click) = "getMyProfile()">GET MY PROFILE</button>
-<div class = "row">
+<h5>Welcome doctor {{doctor.firstName}} {{doctor.lastName}}!</h5>
+<div class="row">
   <div class="col-sm-4"></div>
-  <div class="card" style="width: 18rem;">
-    <h5 class="card-title">  {{doctor.firstName}} {{doctor.lastName}}</h5>
-    <div class="card-body">
-     <p class="card-text"> Role: {{doctor.role}}</p> 
-     <p class="card-text"> Username: {{doctor.username}}</p> 
 
-&nbsp;
-<button class = "btn btn-primary" (click) = "getMyPatients()">GET MY PATIENTS</button>
 
-    <div *ngFor="let patient of patients">
-        <div class="col-sm-4"></div>
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">{{patient.firstName}} {{patient.lastName}}</h5>
-              <p class="card-text">Role: {{patient.role}}</p>    
-            </div>
-          </div>          
-    </div>
-</div>
+
+  &nbsp;
+  <ul class="list-group">
+    <table class="table" title="My patients">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">My patients</th>
+          <th scope="col"></th>
+        </tr>
+        <tr>
+          <th scope="col">Firstname</th>
+          <th scope="col">Lastname</th>
+          <th scope="col">Username</th>
+          <th scope="col"></th>
+
+        </tr>
+      </thead>
+      <tbody *ngFor="let patient of patients">
+        <tr>
+          <!-- <th scope="row"></th> -->
+          <td>{{patient.firstName}}</td>
+          <td>{{patient.lastName}}</td>
+          <td>{{patient.username}}</td>
+          <td><button type="button" class="btn btn-outline-info">Data</button>
+
+            <!-- <a href="#" onclick="f1()">jhhghj</a> -->
+          </td>
+
+        </tr>
+
+      </tbody>
+    </table>
+
+
+    &nbsp;
+    <ul class="list-group">
+      <table class="table" title="Measurements">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col">Measurements</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+          <tr>
+            <th scope="col">patientId </th>
+            <th scope="col">date</th>
+            <th scope="col">CarbIn </th>
+            <th scope="col">Glycoze Level</th>
+
+          </tr>
+        </thead>
+        <tbody *ngFor="let measurement of measurements">
+          <tr>
+            <!-- <th scope="row"></th> -->
+            <td>{{measurement.glucoseLevel}}</td>
+            <td>{{measurement.date | date:"dd/MM/yyyy"}}</td>
+            <td>{{measurement.carbIn}}</td>
+            <td>{{measurement.patientId}}</td>
+
+            <td><button type="button" class="btn btn-outline-info">Data</button>
+
+              <!-- <a href="#" onclick="f1()">jhhghj</a> -->
+            </td>
+
+          </tr>
+
+
+        </tbody>
+      </table>
+
+    </ul>

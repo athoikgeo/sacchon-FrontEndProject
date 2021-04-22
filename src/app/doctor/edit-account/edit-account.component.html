@@ -1,1 +1,43 @@
-<p>edit-account works!</p>
+<div>
+    <form [formGroup]= "form"(ngSubmit)= "onClickSubmit()">
+        <h5>Dear doctor, Please complete the following template to update your account:</h5>
+
+        <div class = "form-group">
+            <label for= "usernameInput">Insert your current Name:</label>
+            <input type="text"class = "form-control" id="usename-input" formControlName="username">     
+        </div>
+
+        <div class = "form-group">
+            <label for= "PasswordInput">Insert your current Password:</label>
+            <input type="text"class = "form-control" id="password-input" formControlName="password">     
+        </div>
+
+
+        <!-- "CHECK PASWORD AND USERNAME!!!!!" -->
+        <form [formGroup]= "form"(ngSubmit)= "onClickSubmit()">
+            <div class = "form-group">
+                <label for= "firstnameInput">Change your First Name:</label>
+                <input type="text"class = "form-control" id="firstname-input" formControlName="firstName">     
+            </div>
+    
+        
+            <div class = "form-group">
+                <label for= "lastnameinput">Change your Last Name:</label>
+                <input type="text"class = "form-control" id="lastname-input" formControlName="lastName">     
+            </div>
+    
+            
+            <div class = "form-group">
+                <label for= "usernameInput">Change your User Name:</label>
+                <input type="text"class = "form-control" id="usename-input" formControlName="username">     
+            </div>
+    
+            <div class = "form-group">
+                <label for= "passwordInput">Change your Password:</label>
+                <input type="text"class = "form-control" id="password-input" formControlName="password">     
+            </div>
+    
+            <button class = "btn btn-primary">Submit</button>
+    
+        </form>
+    

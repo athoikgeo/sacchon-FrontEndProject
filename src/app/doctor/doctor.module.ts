@@ -7,6 +7,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
 import { EditAccountComponent } from './edit-account/edit-account.component';
 import { NewConsultationComponent } from './new-consultation/new-consultation.component';
+import { DoctorComponent } from './doctor.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -16,11 +18,13 @@ import { NewConsultationComponent } from './new-consultation/new-consultation.co
     DoctorProfileComponent,
     EditAccountComponent,
     NewConsultationComponent,
+    DoctorComponent,
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ]
 })
 export class DoctorModule { }
