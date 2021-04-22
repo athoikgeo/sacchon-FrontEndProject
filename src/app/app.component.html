@@ -11,7 +11,15 @@
         <a class="nav-link" [routerLink]="['view']">View patients <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['insert']">Add a patient</a>
+        <a class="nav-link" [routerLink]="['insert']">Patient Registration</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['patient_profile']">Patient Profile</a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['patient_measurement']">Add New Measurement <span class="sr-only">(current)</span></a>
       </li>
       
 
@@ -21,7 +29,7 @@
           <a class="nav-link" [routerLink]="['view_doctors']">View Doctors <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['insert_doctor']">Add a Doctor</a>
+          <a class="nav-link" [routerLink]="['insert_doctor']">Doctor Registration</a>
         </li>
 
         <li class="nav-item active">

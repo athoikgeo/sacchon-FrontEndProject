@@ -9,6 +9,9 @@ import { DoctorListComponent } from './doctor/doctor-list/doctor-list.component'
 import { DoctorInsertComponent } from './doctor/doctor-insert/doctor-insert.component';
 import { DoctorProfileComponent } from './doctor/doctor-profile/doctor-profile.component';
 import { EditAccountComponent } from './doctor/edit-account/edit-account.component';
+import { PatientProfileComponent } from './patient/patient-profile/patient-profile.component';
+import { MeasurementComponent } from './patient/measurement/measurement.component';
+import { PatientEditAccountComponent } from './patient/patient-edit-account/patient-edit-account.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'login',pathMatch:'full'},
@@ -20,7 +23,10 @@ const routes: Routes = [
   {path: 'doctor_profile',component: DoctorProfileComponent},
   {path: 'doctor_edit_account',component: EditAccountComponent},
   {path: 'doctor_new_consultation',component: NewConsultationComponent},
-
+  {path: 'patient_profile',component: PatientProfileComponent},
+  {path: 'patient_measurement',component: MeasurementComponent},
+  {path: 'view_reporters',component: ReporterListComponent},
+  {path: 'patient_edit_account', component: PatientEditAccountComponent},
   {path: 'view_reporters',component: ReporterListComponent}
 ];
 
