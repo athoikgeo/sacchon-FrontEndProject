@@ -99,6 +99,7 @@ export class DoctorService {
     );
   }
 
+  
   deleteAccount( doctorId: string): Observable<any>{
     return this.http.delete<any>(
       `${this.baseUrl}/doctor/${doctorId}`

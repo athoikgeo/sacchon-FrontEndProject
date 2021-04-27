@@ -15,7 +15,6 @@ import { PatientEditAccountComponent } from './patient/patient-edit-account/pati
 import { DoctorComponent } from './doctor/doctor.component';
 import { PatientComponent } from './patient/patient.component';
 
-
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginFormComponent },
@@ -44,7 +43,6 @@ const routes: Routes = [
     ]
   }
 
-  // { path: 'view_reporters', component: ReporterListComponent }
 ];
 
 @NgModule({

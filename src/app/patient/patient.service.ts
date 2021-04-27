@@ -69,17 +69,6 @@ export class PatientService {
       )}
     
       
-    // updateMeasurement( patientId: string,  measurement: Measurement): Observable<any>{
-    //     return this.http.put<any>(
-    //       `${this.baseUrl}/patient/${patientId}/measurement`,
-    //       measurement 
-    //     );
-    //     }
-    // deleteMeasurement( patientId: string,  measurementId: string): Observable<any>{
-    //       return this.http.delete<any>(
-    //         `${this.baseUrl}/patient/${patientId}/measurement/${measurementId}` 
-    //       );   
-    // }
     
     
     updateAccount( patientId: string,  patient: Patient): Observable<any>{
